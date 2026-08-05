@@ -21,438 +21,86 @@ belajar html
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PASHAYA — Outfit</title>
-    <link rel="stylesheet" href="style.css">
+    <title>TOKO KITA</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,sans-serif}
+        body{background:#f5f5f5;padding:15px}
+        .header{display:flex;justify-content:space-between;align-items:center;padding:15px 0 10px}
+        .logo{font-size:22px;font-weight:700;color:#ff5722}
+        .cart-btn{border:none;background:none;font-size:20px;cursor:pointer;color:#333}
+        .banner{background:#ff5722;color:#fff;border-radius:16px;padding:18px;margin-bottom:20px}
+        .banner h2{font-size:18px;margin-bottom:5px}
+        .banner p{font-size:14px;opacity:0.9}
+        .section-title{font-size:18px;font-weight:600;margin-bottom:15px;padding-bottom:5px;border-bottom:2px solid #ff5722;display:inline-block}
+        .produk-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}
+        .produk-card{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.08)}
+        .produk-img{width:100%;height:200px;object-fit:cover}
+        .produk-info{padding:12px}
+        .nama-produk{font-size:15px;font-weight:600;margin-bottom:6px;color:#222}
+        .harga{font-size:16px;font-weight:700;color:#e63946}
+        .beli-btn{width:100%;background:#ff5722;color:#fff;border:none;padding:10px;border-radius:8px;margin-top:10px;cursor:pointer;font-weight:600}
+    </style>
 </head>
 <body>
 
-<!-- Layar Kiri → Daftar Produk -->
-<div class="phone-screen left">
-    <header class="header">
-        <h1 class="logo">PASHAYA</h1>
-        <button class="cart-btn"><i class="fas fa-shopping-bag"></i></button>
-    </header>
-
-    <section class="banner">
-        <div class="banner-text">
-            <h4>WINTER ESSENTIALS</h4>
-            <p>Men's Jackets & Coats<br>Built for Style. Made to Last.</p>
-            <a href="#" class="explore">Explore Collection &gt;&gt;</a>
-        </div>
-        <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=300&h=400&fit=crop" alt="Banner">
-    </section>
-
-    <div class="categories">
-        <span class="cat active">New & Featured</span>
-        <span class="cat">Jackets</span>
-        <span class="cat">Coats</span>
-        <span class="cat">Overcoats</span>
-    </div>
-
-    <section class="products">
-        <div class="section-title">
-            <h3>New Popular Items</h3>
-            <a href="#" class="see-all">See All &gt;</a>
-        </div>
-        <div class="product-grid">
-            <!-- Produk 1 -->
-            <div class="product-card" onclick="openModal()">
-                <div class="prod-img">
-                    <img src="https://images.unsplash.com/photo-1608234808654-4540caf09a21?w=300&h=380&fit=crop" alt="Puffer Jacket">
-                    <button class="heart"><i class="far fa-heart"></i></button>
-                </div>
-                <p>Pashaya Puffer Jacket</p>
-                <p class="price-card">$79.99</p>
-            </div>
-            <!-- Produk 2 -->
-            <div class="product-card" onclick="openModal()">
-                <div class="prod-img">
-                    <img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?w=300&h=380&fit=crop" alt="Trench Coat">
-                    <button class="heart"><i class="far fa-heart"></i></button>
-                </div>
-                <p>Pashaya Trench Coat</p>
-                <p class="price-card">$85.00</p>
-            </div>
-            <!-- Produk 3 -->
-            <div class="product-card" onclick="openModal()">
-                <div class="prod-img">
-                    <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=300&h=380&fit=crop" alt="Bomber Jacket">
-                    <button class="heart"><i class="far fa-heart"></i></button>
-                </div>
-                <p>Pashaya Bomber Jacket</p>
-                <p class="price-card">$92.50</p>
-            </div>
-            <!-- Produk 4 -->
-            <div class="product-card" onclick="openModal()">
-                <div class="prod-img">
-                    <img src="https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?w=300&h=380&fit=crop" alt="Overcoat">
-                    <button class="heart"><i class="far fa-heart"></i></button>
-                </div>
-                <p>Pashaya Overcoat</p>
-                <p class="price-card">$99.00</p>
-            </div>
-        </div>
-    </section>
-
-    <nav class="bottom-nav">
-        <a href="#"><i class="fas fa-home"></i></a>
-        <a href="#"><i class="fas fa-search"></i></a>
-        <a href="#"><i class="far fa-heart"></i></a>
-        <a href="#"><i class="fas fa-user"></i></a>
-    </nav>
+<!-- Header -->
+<div class="header">
+    <h1 class="logo">TOKO KITA</h1>
+    <button class="cart-btn"><i class="fas fa-shopping-bag"></i></button>
 </div>
 
-<!-- Layar Kanan → Detail Produk -->
-<div id="detailModal" class="modal">
-    <div class="phone-screen right">
-        <button class="back-btn" onclick="closeModal()"><i class="fas fa-chevron-left"></i></button>
-        <button class="share-btn"><i class="fas fa-ellipsis-h"></i></button>
-
-        <div class="detail-gallery">
-            <img id="mainImg" src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=400&h=550&fit=crop" alt="Produk Utama" class="main-pic">
-            <div class="thumb-column">
-                <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=100&h=130&fit=crop" class="thumb active" onclick="changeImg(this.src)" alt="">
-                <img src="https://images.unsplash.com/photo-1608234808654-4540caf09a21?w=100&h=130&fit=crop" class="thumb" onclick="changeImg(this.src)" alt="">
-                <img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?w=100&h=130&fit=crop" class="thumb" onclick="changeImg(this.src)" alt="">
-                <img src="https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?w=100&h=130&fit=crop" class="thumb" onclick="changeImg(this.src)" alt="">
-            </div>
-        </div>
-
-        <div class="detail-info">
-            <span class="badge new">New</span>
-            <span class="badge sale">Discount 25%</span>
-            <h2>Pashaya Utility Jacket</h2>
-            <p class="sub-desc">Men's Winter Jacket</p>
-
-            <div class="size-row">
-                <span>Select size</span>
-                <a href="#" class="size-guide">Size Guide</a>
-            </div>
-            <div class="size-buttons">
-                <button class="size-btn active">S</button>
-                <button class="size-btn">M</button>
-                <button class="size-btn">L</button>
-                <button class="size-btn">XL</button>
-                <button class="size-btn">XXL</button>
-            </div>
-
-            <div class="qty-price">
-                <div class="qty-control">
-                    <button onclick="minusQty()">−</button>
-                    <span id="qtyNum">1</span>
-                    <button onclick="plusQty()">+</button>
-                </div>
-                <div class="price-box">
-                    <span class="old-price">$89.99</span>
-                    <span class="new-price">$66.75</span>
-                </div>
-            </div>
-            <p class="total-label">Total price: <span id="totalPrice">$66.75</span></p>
-
-            <button class="add-bag-btn"><i class="fas fa-shopping-bag"></i> Add to Bag</button>
-        </div>
-    </div>
+<!-- Banner -->
+<div class="banner">
+    <h2>🔥 DISKON SPESIAL HARI INI!</h2>
+    <p>Temukan produk terbaik dengan harga paling hemat</p>
 </div>
 
-<script src="script.js"></script>
+<!-- Daftar Produk -->
+<h2 class="section-title">Produk Terlaris</h2>
+<div class="produk-grid">
+
+    <!-- ✅ 1. JAKET PRIA -->
+    <div class="produk-card">
+        <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=400&h=400&fit=crop" class="produk-img" alt="Jaket Pria">
+        <div class="produk-info">
+            <p class="nama-produk">🧥 Jaket Pria</p>
+            <p class="harga">Rp 100.000,00</p>
+            <button class="beli-btn">Beli Sekarang</button>
+        </div>
+    </div>
+
+    <!-- ✅ 2. TAS WANITA -->
+    <div class="produk-card">
+        <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=400&h=400&fit=crop" class="produk-img" alt="Tas Wanita">
+        <div class="produk-info">
+            <p class="nama-produk">👜 Tas Wanita</p>
+            <p class="harga">Rp 60.000,00</p>
+            <button class="beli-btn">Beli Sekarang</button>
+        </div>
+    </div>
+
+    <!-- ✅ 3. SEPATU SEKOLAH -->
+    <div class="produk-card">
+        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&h=400&fit=crop" class="produk-img" alt="Sepatu Sekolah">
+        <div class="produk-info">
+            <p class="nama-produk">👟 Sepatu Sekolah</p>
+            <p class="harga">Rp 70.000,00</p>
+            <button class="beli-btn">Beli Sekarang</button>
+        </div>
+    </div>
+
+    <!-- ✅ 4. CELANA PRIA -->
+    <div class="produk-card">
+        <img src="https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=400&h=400&fit=crop" class="produk-img" alt="Celana Pria">
+        <div class="produk-info">
+            <p class="nama-produk">👖 Celana Pria</p>
+            <p class="harga">Rp 140.000,00</p>
+            <button class="beli-btn">Beli Sekarang</button>
+        </div>
+    </div>
+
+</div>
+
 </body>
 </html>
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Roboto, sans-serif;
-}
-body {
-    background: #f0f0f0;
-    display: flex;
-    justify-content: center;
-    padding: 20px;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.phone-screen {
-    width: 375px;
-    height: 812px;
-    background: #fff;
-    border-radius: 45px;
-    border: 10px solid #111;
-    overflow-y: auto;
-    position: relative;
-    padding: 60px 18px 80px;
-}
-
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 18px;
-}
-.logo {
-    font-size: 22px;
-    font-weight: 700;
-    letter-spacing: 1px;
-}
-.cart-btn {
-    border: none;
-    background: none;
-    font-size: 20px;
-    cursor: pointer;
-}
-
-.banner {
-    background: #1a1a1a;
-    color: #fff;
-    border-radius: 16px;
-    padding: 16px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-}
-.banner-text h4 { font-size: 14px; margin-bottom: 4px; }
-.banner-text p { font-size: 11px; opacity: 0.7; margin-bottom: 8px; line-height: 1.4; }
-.explore { color: #fff; font-size: 12px; text-decoration: none; }
-.banner img { width: 90px; height: 110px; border-radius: 10px; object-fit: cover; }
-
-.categories {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
-    overflow-x: auto;
-}
-.cat {
-    font-size: 12px;
-    padding: 6px 14px;
-    border-radius: 20px;
-    background: #f0f0f0;
-    white-space: nowrap;
-}
-.cat.active { background: #111; color: #fff; }
-
-.section-title {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 14px;
-}
-.section-title h3 { font-size: 16px; }
-.see-all { font-size: 13px; color: #777; text-decoration: none; }
-.product-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-}
-.product-card { cursor: pointer; }
-.prod-img {
-    position: relative;
-    border-radius: 14px;
-    overflow: hidden;
-    margin-bottom: 8px;
-    background: #f5f5f5;
-}
-.prod-img img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    display: block;
-}
-.heart {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    border: none;
-    background: #fff;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    cursor: pointer;
-}
-.product-card p { font-size: 13px; margin-bottom: 4px; }
-.price-card {
-    font-size: 14px;
-    font-weight: 600;
-    color: #e63946;
-}
-
-.bottom-nav {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: space-around;
-    padding: 12px 0;
-    border-top: 1px solid #eee;
-    background: #fff;
-    border-radius: 0 0 35px 35px;
-}
-.bottom-nav a { color: #333; font-size: 20px; text-decoration: none; }
-
-.modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.5);
-    z-index: 999;
-    justify-content: center;
-    align-items: center;
-}
-.modal.active { display: flex; }
-
-.back-btn, .share-btn {
-    position: absolute;
-    top: 60px;
-    border: none;
-    background: #f5f5f5;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    font-size: 14px;
-    cursor: pointer;
-}
-.back-btn { left: 18px; }
-.share-btn { right: 18px; }
-
-.detail-gallery {
-    display: flex;
-    gap: 10px;
-    margin-top: 40px;
-    margin-bottom: 20px;
-}
-.main-pic {
-    width: 280px;
-    height: 380px;
-    border-radius: 14px;
-    object-fit: cover;
-}
-.thumb-column {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-.thumb {
-    width: 55px;
-    height: 75px;
-    border-radius: 8px;
-    object-fit: cover;
-    cursor: pointer;
-    border: 2px solid transparent;
-}
-.thumb.active { border-color: #111; }
-
-.badge {
-    display: inline-block;
-    font-size: 11px;
-    padding: 3px 8px;
-    border-radius: 4px;
-    margin-right: 6px;
-}
-.new { background: #4cd964; color: #fff; }
-.sale { background: #ff3b30; color: #fff; }
-.detail-info h2 { font-size: 18px; margin: 10px 0 4px; }
-.sub-desc { font-size: 13px; color: #777; margin-bottom: 16px; }
-
-.size-row {
-    display: flex;
-    justify-content: space-between;
-    font-size: 13px;
-    margin-bottom: 10px;
-}
-.size-guide { color: #007aff; text-decoration: none; }
-.size-buttons {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
-}
-.size-btn {
-    width: 44px;
-    height: 44px;
-    border: 1px solid #ddd;
-    background: #fff;
-    border-radius: 8px;
-    cursor: pointer;
-}
-.size-btn.active { border-color: #111; background: #111; color: #fff; }
-
-.qty-price {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 6px;
-}
-.qty-control {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-.qty-control button {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    border: 1px solid #ddd;
-    background: #fff;
-    cursor: pointer;
-    font-size: 16px;
-}
-.price-box { text-align: right; }
-.old-price { color: #aaa; text-decoration: line-through; font-size: 14px; margin-right: 8px; }
-.new-price { font-size: 17px; font-weight: 600; color: #e63946; }
-.total-label { font-size: 14px; color: #333; text-align: right; margin-bottom: 16px; font-weight: 500; }
-
-.add-bag-btn {
-    width: 100%;
-    background: #111;
-    color: #fff;
-    border: none;
-    padding: 14px;
-    border-radius: 12px;
-    font-size: 15px;
-    cursor: pointer;
-}
-
-
-const unitPrice = 66.75; // Harga setelah diskon
-
-function openModal() {
-    document.getElementById('detailModal').classList.add('active');
-}
-function closeModal() {
-    document.getElementById('detailModal').classList.remove('active');
-}
-
-function changeImg(src) {
-    document.getElementById('mainImg').src = src;
-    document.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
-    event.target.classList.add('active');
-}
-
-let qty = 1;
-function updateTotal() {
-    document.getElementById('totalPrice').textContent = '$' + (unitPrice * qty).toFixed(2);
-}
-function minusQty() {
-    if (qty > 1) qty--;
-    document.getElementById('qtyNum').textContent = qty;
-    updateTotal();
-}
-function plusQty() {
-    qty++;
-    document.getElementById('qtyNum').textContent = qty;
-    updateTotal();
-}
-
-document.querySelectorAll('.size-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-        document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-    });
-});
-
-
