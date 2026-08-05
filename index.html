@@ -16,4 +16,97 @@ belajar html
 </body>
 </html>
 
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TokoKita - Belanja Mudah & Murah</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+        body { background-color: #f4f4f4; color: #333; }
+        
+        /* Header */
+        header { background: #fff; padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #ddd; }
+        .logo { font-size: 24px; font-weight: bold; color: #ff5722; }
+        .nav-links { display: flex; gap: 20px; }
+        .nav-links a { text-decoration: none; color: #333; font-weight: bold; }
+
+        /* Hero Banner */
+        .hero { background: #ff5722; color: #fff; text-align: center; padding: 60px 20px; }
+        .hero h1 { font-size: 36px; margin-bottom: 10px; }
+        .hero p { font-size: 18px; margin-bottom: 20px; }
+        .btn { background: #fff; color: #ff5722; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold; }
+
+        /* Product Section */
+        .container { max-width: 1100px; margin: 30px auto; padding: 0 20px; }
+        .section-title { font-size: 22px; margin-bottom: 20px; border-bottom: 2px solid #ff5722; padding-bottom: 5px; display: inline-block; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+        
+        /* Product Card */
+        .card { background: #fff; border-radius: 5px; padding: 15px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .card img { width: 100%; height: 150px; background: #ddd; border-radius: 5px; margin-bottom: 10px; }
+        .card h3 { font-size: 16px; margin-bottom: 5px; }
+        .card .price { color: #ff5722; font-weight: bold; margin-bottom: 10px; }
+        .card button { background: #ff5722; color: #fff; border: none; padding: 8px 15px; border-radius: 3px; cursor: pointer; width: 100%; }
+
+        /* Footer */
+        footer { background: #333; color: #fff; text-align: center; padding: 20px; margin-top: 40px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">TokoKita</div>
+        <div class="nav-links">
+            <a href="#">Beranda</a>
+            <a href="#">Kategori</a>
+            <a href="#">Keranjang</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Diskon Spesial Hari Ini!</h1>
+        <p>Temukan produk terbaik dengan harga paling hemat di sini.</p>
+        <a href="#" class="btn">Belanja Sekarang</a>
+    </section>
+
+    <div class="container">
+        <h2 class="section-title">Produk Terlaris</h2>
+        <div class="grid">
+            <div class="card">
+                <img src="" alt="Produk">
+                <h3>Sepatu Olahraga</h3>
+                <div class="price">Rp 250.000</div>
+                <button>Beli</button>
+            </div>
+            <div class="card">
+                <img src="" alt="Produk">
+                <h3>Tas Ransel Pria</h3>
+                <div class="price">Rp 150.000</div>
+                <button>Beli</button>
+            </div>
+            <div class="card">
+                <img src="" alt="Produk">
+                <h3>Jam Tangan Kasual</h3>
+                <div class="price">Rp 300.000</div>
+                <button>Beli</button>
+            </div>
+            <div class="card">
+                <img src="" alt="Produk">
+                <h3>Kaos Polos Katun</h3>
+                <div class="price">Rp 75.000</div>
+                <button>Beli</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 TokoKita. Hak cipta dilindungi.</p>
+    </footer>
+
+</body>
+</html>
+
+
 
