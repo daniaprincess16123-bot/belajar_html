@@ -21,99 +21,139 @@ belajar html
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TokoKita - Belanja Mudah & Murah</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial; }
-        body { background: #f5f5f
-
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TokoKita - Belanja Mudah & Murah</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
-        body { background-color: #f4f4f4; color: #333; }
-        
-        /* Header */
-        header { background: #fff; padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #ddd; }
-        .logo { font-size: 24px; font-weight: bold; color: #ff5722; }
-        .nav-links { display: flex; gap: 20px; }
-        .nav-links a { text-decoration: none; color: #333; font-weight: bold; }
-
-        /* Hero Banner */
-        .hero { background: #ff5722; color: #fff; text-align: center; padding: 60px 20px; }
-        .hero h1 { font-size: 36px; margin-bottom: 10px; }
-        .hero p { font-size: 18px; margin-bottom: 20px; }
-        .btn { background: #fff; color: #ff5722; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold; }
-
-        /* Product Section */
-        .container { max-width: 1100px; margin: 30px auto; padding: 0 20px; }
-        .section-title { font-size: 22px; margin-bottom: 20px; border-bottom: 2px solid #ff5722; padding-bottom: 5px; display: inline-block; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
-        
-        /* Product Card */
-        .card { background: #fff; border-radius: 5px; padding: 15px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        .card img { width: 100%; height: 150px; background: #ddd; border-radius: 5px; margin-bottom: 10px; }
-        .card h3 { font-size: 16px; margin-bottom: 5px; }
-        .card .price { color: #ff5722; font-weight: bold; margin-bottom: 10px; }
-        .card button { background: #ff5722; color: #fff; border: none; padding: 8px 15px; border-radius: 3px; cursor: pointer; width: 100%; }
-
-        /* Footer */
-        footer { background: #333; color: #fff; text-align: center; padding: 20px; margin-top: 40px; }
-    </style>
+    <title>Toko Online — Produk</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Ikon Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-
-    <header>
-        <div class="logo">TokoKita</div>
-        <div class="nav-links">
-            <a href="#">Beranda</a>
-            <a href="#">Kategori</a>
-            <a href="#">Keranjang</a>
-        </div>
+    <!-- Header / Navigasi -->
+    <header class="header">
+        <div class="logo">PASHAYA</div>
+        <button class="cart-icon"><i class="fas fa-shopping-bag"></i></button>
     </header>
 
-    <section class="hero">
-        <h1>Diskon Spesial Hari Ini!</h1>
-        <p>Temukan produk terbaik dengan harga paling hemat di sini.</p>
-        <a href="#" class="btn">Belanja Sekarang</a>
+    <!-- Banner Promo -->
+    <section class="banner">
+        <div class="banner-text">
+            <h3>WINTER ESSENTIALS</h3>
+            <p>Men's Jackets & Coats — Built for Style. Made to Last.</p>
+            <a href="#" class="btn-banner">Explore Collection &gt;&gt;</a>
+        </div>
+        <img src="https://via.placeholder.com/150x200" alt="Banner">
     </section>
 
-    <div class="container">
-        <h2 class="section-title">Produk Terlaris</h2>
-        <div class="grid">
-            <div class="card">
-                <img src="" alt="Produk">
-                <h3>Sepatu Olahraga</h3>
-                <div class="price">Rp 250.000</div>
-                <button>Beli</button>
+    <!-- Kategori Tab -->
+    <div class="tabs">
+        <button class="tab active">New & Featured</button>
+        <button class="tab">Jackets</button>
+        <button class="tab">Coats</button>
+        <button class="tab">Overcoats</button>
+    </div>
+
+    <!-- Daftar Produk (Grid) -->
+    <section class="products-section">
+        <div class="section-head">
+            <h2>New Popular Items</h2>
+            <a href="#" class="see-all">See All &gt;</a>
+        </div>
+        <div class="products-grid">
+            <!-- Produk 1 -->
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="https://via.placeholder.com/200x250" alt="Puffer Jacket">
+                    <button class="wishlist"><i class="far fa-heart"></i></button>
+                </div>
+                <h4>Pashaya Puffer Jacket</h4>
             </div>
-            <div class="card">
-                <img src="" alt="Produk">
-                <h3>Tas Ransel Pria</h3>
-                <div class="price">Rp 150.000</div>
-                <button>Beli</button>
+            <!-- Produk 2 -->
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="https://via.placeholder.com/200x250" alt="Trench Coat">
+                    <button class="wishlist"><i class="far fa-heart"></i></button>
+                </div>
+                <h4>Pashaya Trench Coat</h4>
             </div>
-            <div class="card">
-                <img src="" alt="Produk">
-                <h3>Jam Tangan Kasual</h3>
-                <div class="price">Rp 300.000</div>
-                <button>Beli</button>
+            <!-- Produk 3 -->
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="https://via.placeholder.com/200x250" alt="Bomber Jacket">
+                    <button class="wishlist"><i class="far fa-heart"></i></button>
+                </div>
+                <h4>Pashaya Bomber Jacket</h4>
             </div>
-            <div class="card">
-                <img src="" alt="Produk">
-                <h3>Kaos Polos Katun</h3>
-                <div class="price">Rp 75.000</div>
-                <button>Beli</button>
+            <!-- Produk 4 -->
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="https://via.placeholder.com/200x250" alt="Overcoat">
+                    <button class="wishlist"><i class="far fa-heart"></i></button>
+                </div>
+                <h4>Pashaya Overcoat</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Detail Produk (seperti layar kanan Gambar 2) -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-grid">
+                <!-- Gambar Produk Utama + Thumbnail -->
+                <div class="product-gallery">
+                    <img id="mainProductImg" src="https://via.placeholder.com/300x400" alt="Produk Utama">
+                    <div class="thumbnails">
+                        <img src="https://via.placeholder.com/60x80" class="thumb active" alt="thumb1">
+                        <img src="https://via.placeholder.com/60x80" class="thumb" alt="thumb2">
+                        <img src="https://via.placeholder.com/60x80" class="thumb" alt="thumb3">
+                    </div>
+                </div>
+                <!-- Info Produk -->
+                <div class="product-info">
+                    <span class="badge new">New</span>
+                    <span class="badge discount">Discount 25%</span>
+                    <h2>Pashaya Utility Jacket</h2>
+                    <p class="sub">Men's Winter Jacket</p>
+
+                    <!-- Pilih Ukuran -->
+                    <div class="size-section">
+                        <p>Select size <a href="#" class="size-guide">Size Guide</a></p>
+                        <div class="sizes">
+                            <button class="size-btn">S</button>
+                            <button class="size-btn">M</button>
+                            <button class="size-btn">L</button>
+                            <button class="size-btn">XL</button>
+                            <button class="size-btn">XXL</button>
+                        </div>
+                    </div>
+
+                    <!-- Jumlah & Harga -->
+                    <div class="qty-row">
+                        <div class="qty">
+                            <button class="qty-btn minus">-</button>
+                            <span class="qty-val">1</span>
+                            <button class="qty-btn plus">+</button>
+                        </div>
+                        <div class="price">
+                            <del>$89.99</del>
+                            <strong>$66.75</strong>
+                        </div>
+                    </div>
+
+                    <!-- Tombol Beli -->
+                    <button class="add-to-bag"><i class="fas fa-shopping-bag"></i> Add to Bag</button>
+                </div>
             </div>
         </div>
     </div>
 
-    <footer>
-        <p>&copy; 2026 TokoKita. Hak cipta dilindungi.</p>
-    </footer>
+    <!-- Nav Bawah -->
+    <nav class="bottom-nav">
+        <a href="#"><i class="fas fa-home"></i></a>
+        <a href="#"><i class="fas fa-search"></i></a>
+        <a href="#"><i class="far fa-heart"></i></a>
+        <a href="#"><i class="fas fa-user"></i></a>
+    </nav>
 
+    <script src="script.js"></script>
 </body>
 </html>
