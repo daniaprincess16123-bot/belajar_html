@@ -29,13 +29,11 @@ belajar html
 
 <!-- Layar Kiri → Daftar Produk -->
 <div class="phone-screen left">
-    <!-- Header -->
     <header class="header">
         <h1 class="logo">PASHAYA</h1>
         <button class="cart-btn"><i class="fas fa-shopping-bag"></i></button>
     </header>
 
-    <!-- Banner -->
     <section class="banner">
         <div class="banner-text">
             <h4>WINTER ESSENTIALS</h4>
@@ -45,7 +43,6 @@ belajar html
         <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=300&h=400&fit=crop" alt="Banner">
     </section>
 
-    <!-- Kategori -->
     <div class="categories">
         <span class="cat active">New & Featured</span>
         <span class="cat">Jackets</span>
@@ -53,7 +50,6 @@ belajar html
         <span class="cat">Overcoats</span>
     </div>
 
-    <!-- Produk -->
     <section class="products">
         <div class="section-title">
             <h3>New Popular Items</h3>
@@ -67,6 +63,7 @@ belajar html
                     <button class="heart"><i class="far fa-heart"></i></button>
                 </div>
                 <p>Pashaya Puffer Jacket</p>
+                <p class="price-card">$79.99</p>
             </div>
             <!-- Produk 2 -->
             <div class="product-card" onclick="openModal()">
@@ -75,6 +72,7 @@ belajar html
                     <button class="heart"><i class="far fa-heart"></i></button>
                 </div>
                 <p>Pashaya Trench Coat</p>
+                <p class="price-card">$85.00</p>
             </div>
             <!-- Produk 3 -->
             <div class="product-card" onclick="openModal()">
@@ -83,6 +81,7 @@ belajar html
                     <button class="heart"><i class="far fa-heart"></i></button>
                 </div>
                 <p>Pashaya Bomber Jacket</p>
+                <p class="price-card">$92.50</p>
             </div>
             <!-- Produk 4 -->
             <div class="product-card" onclick="openModal()">
@@ -91,11 +90,11 @@ belajar html
                     <button class="heart"><i class="far fa-heart"></i></button>
                 </div>
                 <p>Pashaya Overcoat</p>
+                <p class="price-card">$99.00</p>
             </div>
         </div>
     </section>
 
-    <!-- Nav Bawah -->
     <nav class="bottom-nav">
         <a href="#"><i class="fas fa-home"></i></a>
         <a href="#"><i class="fas fa-search"></i></a>
@@ -104,13 +103,12 @@ belajar html
     </nav>
 </div>
 
-<!-- Layar Kanan → Detail Produk (Modal) -->
+<!-- Layar Kanan → Detail Produk -->
 <div id="detailModal" class="modal">
     <div class="phone-screen right">
         <button class="back-btn" onclick="closeModal()"><i class="fas fa-chevron-left"></i></button>
         <button class="share-btn"><i class="fas fa-ellipsis-h"></i></button>
 
-        <!-- Gambar Utama + Thumbnail Samping -->
         <div class="detail-gallery">
             <img id="mainImg" src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=400&h=550&fit=crop" alt="Produk Utama" class="main-pic">
             <div class="thumb-column">
@@ -121,14 +119,12 @@ belajar html
             </div>
         </div>
 
-        <!-- Info Produk -->
         <div class="detail-info">
             <span class="badge new">New</span>
             <span class="badge sale">Discount 25%</span>
             <h2>Pashaya Utility Jacket</h2>
             <p class="sub-desc">Men's Winter Jacket</p>
 
-            <!-- Pilih Ukuran -->
             <div class="size-row">
                 <span>Select size</span>
                 <a href="#" class="size-guide">Size Guide</a>
@@ -141,7 +137,6 @@ belajar html
                 <button class="size-btn">XXL</button>
             </div>
 
-            <!-- Jumlah & Harga -->
             <div class="qty-price">
                 <div class="qty-control">
                     <button onclick="minusQty()">−</button>
@@ -153,9 +148,8 @@ belajar html
                     <span class="new-price">$66.75</span>
                 </div>
             </div>
-            <p class="total-label">Total price</p>
+            <p class="total-label">Total price: <span id="totalPrice">$66.75</span></p>
 
-            <!-- Tombol Beli -->
             <button class="add-bag-btn"><i class="fas fa-shopping-bag"></i> Add to Bag</button>
         </div>
     </div>
