@@ -21,130 +21,79 @@ belajar html
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Toko Online — Produk</title>
+    <title>PASHAYA — Outfit</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Ikon Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Header / Navigasi -->
+
+<!-- Layar Kiri → Daftar Produk -->
+<div class="phone-screen left">
+    <!-- Header -->
     <header class="header">
-        <div class="logo">PASHAYA</div>
-        <button class="cart-icon"><i class="fas fa-shopping-bag"></i></button>
+        <h1 class="logo">PASHAYA</h1>
+        <button class="cart-btn"><i class="fas fa-shopping-bag"></i></button>
     </header>
 
-    <!-- Banner Promo -->
+    <!-- Banner -->
     <section class="banner">
         <div class="banner-text">
-            <h3>WINTER ESSENTIALS</h3>
-            <p>Men's Jackets & Coats — Built for Style. Made to Last.</p>
-            <a href="#" class="btn-banner">Explore Collection &gt;&gt;</a>
+            <h4>WINTER ESSENTIALS</h4>
+            <p>Men's Jackets & Coats<br>Built for Style. Made to Last.</p>
+            <a href="#" class="explore">Explore Collection &gt;&gt;</a>
         </div>
-        <img src="https://via.placeholder.com/150x200" alt="Banner">
+        <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=300&h=400&fit=crop" alt="Banner">
     </section>
 
-    <!-- Kategori Tab -->
-    <div class="tabs">
-        <button class="tab active">New & Featured</button>
-        <button class="tab">Jackets</button>
-        <button class="tab">Coats</button>
-        <button class="tab">Overcoats</button>
+    <!-- Kategori -->
+    <div class="categories">
+        <span class="cat active">New & Featured</span>
+        <span class="cat">Jackets</span>
+        <span class="cat">Coats</span>
+        <span class="cat">Overcoats</span>
     </div>
 
-    <!-- Daftar Produk (Grid) -->
-    <section class="products-section">
-        <div class="section-head">
-            <h2>New Popular Items</h2>
+    <!-- Produk -->
+    <section class="products">
+        <div class="section-title">
+            <h3>New Popular Items</h3>
             <a href="#" class="see-all">See All &gt;</a>
         </div>
-        <div class="products-grid">
+        <div class="product-grid">
             <!-- Produk 1 -->
-            <div class="product-card">
-                <div class="product-img">
-                    <img src="https://via.placeholder.com/200x250" alt="Puffer Jacket">
-                    <button class="wishlist"><i class="far fa-heart"></i></button>
+            <div class="product-card" onclick="openModal()">
+                <div class="prod-img">
+                    <img src="https://images.unsplash.com/photo-1608234808654-4540caf09a21?w=300&h=380&fit=crop" alt="Puffer Jacket">
+                    <button class="heart"><i class="far fa-heart"></i></button>
                 </div>
-                <h4>Pashaya Puffer Jacket</h4>
+                <p>Pashaya Puffer Jacket</p>
             </div>
             <!-- Produk 2 -->
-            <div class="product-card">
-                <div class="product-img">
-                    <img src="https://via.placeholder.com/200x250" alt="Trench Coat">
-                    <button class="wishlist"><i class="far fa-heart"></i></button>
+            <div class="product-card" onclick="openModal()">
+                <div class="prod-img">
+                    <img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?w=300&h=380&fit=crop" alt="Trench Coat">
+                    <button class="heart"><i class="far fa-heart"></i></button>
                 </div>
-                <h4>Pashaya Trench Coat</h4>
+                <p>Pashaya Trench Coat</p>
             </div>
             <!-- Produk 3 -->
-            <div class="product-card">
-                <div class="product-img">
-                    <img src="https://via.placeholder.com/200x250" alt="Bomber Jacket">
-                    <button class="wishlist"><i class="far fa-heart"></i></button>
+            <div class="product-card" onclick="openModal()">
+                <div class="prod-img">
+                    <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=300&h=380&fit=crop" alt="Bomber Jacket">
+                    <button class="heart"><i class="far fa-heart"></i></button>
                 </div>
-                <h4>Pashaya Bomber Jacket</h4>
+                <p>Pashaya Bomber Jacket</p>
             </div>
             <!-- Produk 4 -->
-            <div class="product-card">
-                <div class="product-img">
-                    <img src="https://via.placeholder.com/200x250" alt="Overcoat">
-                    <button class="wishlist"><i class="far fa-heart"></i></button>
+            <div class="product-card" onclick="openModal()">
+                <div class="prod-img">
+                    <img src="https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?w=300&h=380&fit=crop" alt="Overcoat">
+                    <button class="heart"><i class="far fa-heart"></i></button>
                 </div>
-                <h4>Pashaya Overcoat</h4>
+                <p>Pashaya Overcoat</p>
             </div>
         </div>
     </section>
-
-    <!-- Modal Detail Produk (seperti layar kanan Gambar 2) -->
-    <div id="productModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <div class="modal-grid">
-                <!-- Gambar Produk Utama + Thumbnail -->
-                <div class="product-gallery">
-                    <img id="mainProductImg" src="https://via.placeholder.com/300x400" alt="Produk Utama">
-                    <div class="thumbnails">
-                        <img src="https://via.placeholder.com/60x80" class="thumb active" alt="thumb1">
-                        <img src="https://via.placeholder.com/60x80" class="thumb" alt="thumb2">
-                        <img src="https://via.placeholder.com/60x80" class="thumb" alt="thumb3">
-                    </div>
-                </div>
-                <!-- Info Produk -->
-                <div class="product-info">
-                    <span class="badge new">New</span>
-                    <span class="badge discount">Discount 25%</span>
-                    <h2>Pashaya Utility Jacket</h2>
-                    <p class="sub">Men's Winter Jacket</p>
-
-                    <!-- Pilih Ukuran -->
-                    <div class="size-section">
-                        <p>Select size <a href="#" class="size-guide">Size Guide</a></p>
-                        <div class="sizes">
-                            <button class="size-btn">S</button>
-                            <button class="size-btn">M</button>
-                            <button class="size-btn">L</button>
-                            <button class="size-btn">XL</button>
-                            <button class="size-btn">XXL</button>
-                        </div>
-                    </div>
-
-                    <!-- Jumlah & Harga -->
-                    <div class="qty-row">
-                        <div class="qty">
-                            <button class="qty-btn minus">-</button>
-                            <span class="qty-val">1</span>
-                            <button class="qty-btn plus">+</button>
-                        </div>
-                        <div class="price">
-                            <del>$89.99</del>
-                            <strong>$66.75</strong>
-                        </div>
-                    </div>
-
-                    <!-- Tombol Beli -->
-                    <button class="add-to-bag"><i class="fas fa-shopping-bag"></i> Add to Bag</button>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- Nav Bawah -->
     <nav class="bottom-nav">
@@ -153,7 +102,65 @@ belajar html
         <a href="#"><i class="far fa-heart"></i></a>
         <a href="#"><i class="fas fa-user"></i></a>
     </nav>
+</div>
 
-    <script src="script.js"></script>
+<!-- Layar Kanan → Detail Produk (Modal) -->
+<div id="detailModal" class="modal">
+    <div class="phone-screen right">
+        <button class="back-btn" onclick="closeModal()"><i class="fas fa-chevron-left"></i></button>
+        <button class="share-btn"><i class="fas fa-ellipsis-h"></i></button>
+
+        <!-- Gambar Utama + Thumbnail Samping -->
+        <div class="detail-gallery">
+            <img id="mainImg" src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=400&h=550&fit=crop" alt="Produk Utama" class="main-pic">
+            <div class="thumb-column">
+                <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=100&h=130&fit=crop" class="thumb active" onclick="changeImg(this.src)" alt="">
+                <img src="https://images.unsplash.com/photo-1608234808654-4540caf09a21?w=100&h=130&fit=crop" class="thumb" onclick="changeImg(this.src)" alt="">
+                <img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?w=100&h=130&fit=crop" class="thumb" onclick="changeImg(this.src)" alt="">
+                <img src="https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?w=100&h=130&fit=crop" class="thumb" onclick="changeImg(this.src)" alt="">
+            </div>
+        </div>
+
+        <!-- Info Produk -->
+        <div class="detail-info">
+            <span class="badge new">New</span>
+            <span class="badge sale">Discount 25%</span>
+            <h2>Pashaya Utility Jacket</h2>
+            <p class="sub-desc">Men's Winter Jacket</p>
+
+            <!-- Pilih Ukuran -->
+            <div class="size-row">
+                <span>Select size</span>
+                <a href="#" class="size-guide">Size Guide</a>
+            </div>
+            <div class="size-buttons">
+                <button class="size-btn active">S</button>
+                <button class="size-btn">M</button>
+                <button class="size-btn">L</button>
+                <button class="size-btn">XL</button>
+                <button class="size-btn">XXL</button>
+            </div>
+
+            <!-- Jumlah & Harga -->
+            <div class="qty-price">
+                <div class="qty-control">
+                    <button onclick="minusQty()">−</button>
+                    <span id="qtyNum">1</span>
+                    <button onclick="plusQty()">+</button>
+                </div>
+                <div class="price-box">
+                    <span class="old-price">$89.99</span>
+                    <span class="new-price">$66.75</span>
+                </div>
+            </div>
+            <p class="total-label">Total price</p>
+
+            <!-- Tombol Beli -->
+            <button class="add-bag-btn"><i class="fas fa-shopping-bag"></i> Add to Bag</button>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
