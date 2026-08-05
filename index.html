@@ -14,146 +14,106 @@ belajar html
     <p class="teks-biru">Paragraf ini juga berwarna biru.</p>
 
 </body>
-</html>
+</html
 
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pashaya Outfit - Premium Store</title>
+    <title>TokoKita - Belanja Mudah & Murah</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; }
-        body { background-color: #0b0c10; color: #fff; padding-bottom: 60px; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial; }
+        body { background: #f5f5f
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TokoKita - Belanja Mudah & Murah</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+        body { background-color: #f4f4f4; color: #333; }
         
-        /* Header Premium */
-        header { background: #0b0c10; padding: 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1f2833; }
-        .logo { font-size: 22px; font-weight: bold; letter-spacing: 2px; color: #fff; }
+        /* Header */
+        header { background: #fff; padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #ddd; }
+        .logo { font-size: 24px; font-weight: bold; color: #ff5722; }
         .nav-links { display: flex; gap: 20px; }
-        .nav-links a { text-decoration: none; color: #c5a880; font-weight: 600; font-size: 14px; }
+        .nav-links a { text-decoration: none; color: #333; font-weight: bold; }
 
-        /* Hero Banner Terinspirasi dari Gambar */
-        .hero { background: #1f2833; margin: 15px; padding: 25px; border-radius: 15px; display: flex; align-items: center; justify-content: space-between; gap: 15px; position: relative; overflow: hidden; }
-        .hero-text { flex: 1; z-index: 2; }
-        .hero h1 { font-size: 24px; font-weight: 700; margin-bottom: 5px; color: #fff; }
-        .hero p { font-size: 13px; color: #95a5a6; margin-bottom: 15px; }
-        .btn { background: #c5a880; color: #0b0c10; padding: 8px 16px; border-radius: 20px; text-decoration: none; font-weight: bold; font-size: 12px; display: inline-block; }
-        .hero-image { flex: 1; display: flex; justify-content: flex-end; z-index: 2; }
-        .hero-image img { width: 110px; height: 140px; border-radius: 10px; object-fit: cover; border: 2px solid #c5a880; }
+        /* Hero Banner */
+        .hero { background: #ff5722; color: #fff; text-align: center; padding: 60px 20px; }
+        .hero h1 { font-size: 36px; margin-bottom: 10px; }
+        .hero p { font-size: 18px; margin-bottom: 20px; }
+        .btn { background: #fff; color: #ff5722; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold; }
 
-        /* Kategori Tab Menu */
-        .categories { display: flex; gap: 10px; padding: 10px 20px; overflow-x: auto; white-space: nowrap; margin-bottom: 10px; }
-        .cat-item { background: #1f2833; padding: 8px 16px; border-radius: 20px; font-size: 12px; font-weight: 600; color: #aaa; cursor: pointer; }
-        .cat-item.active { background: #fff; color: #0b0c10; }
-
-        /* Kotak Section Produk */
-        .container { padding: 0 20px; margin-top: 10px; }
-        .section-title { font-size: 18px; font-weight: 700; margin-bottom: 15px; color: #fff; letter-spacing: 0.5px; }
-        .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
+        /* Product Section */
+        .container { max-width: 1100px; margin: 30px auto; padding: 0 20px; }
+        .section-title { font-size: 22px; margin-bottom: 20px; border-bottom: 2px solid #ff5722; padding-bottom: 5px; display: inline-block; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
         
-        /* Kartu Produk Gaya Aplikasi iOS/Android di Gambar */
-        .card { background: #1f2833; border-radius: 15px; padding: 12px; text-align: left; position: relative; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
-        .card .like-btn { position: absolute; top: 20px; left: 20px; background: rgba(255,255,255,0.9); border: none; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; cursor: pointer; color: #000; z-index: 10; }
-        .card img { width: 100%; height: 180px; object-fit: cover; border-radius: 10px; margin-bottom: 10px; background: #2c3e50; }
-        .card h3 { font-size: 13px; font-weight: 600; color: #fff; margin-bottom: 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-        .card .price { color: #c5a880; font-weight: 700; font-size: 14px; margin-bottom: 10px; }
-        .card button { background: #fff; color: #0b0c10; border: none; padding: 8px; border-radius: 8px; font-weight: 700; font-size: 12px; cursor: pointer; width: 100%; transition: 0.2s; }
-        .card button:active { background: #c5a880; }
+        /* Product Card */
+        .card { background: #fff; border-radius: 5px; padding: 15px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .card img { width: 100%; height: 150px; background: #ddd; border-radius: 5px; margin-bottom: 10px; }
+        .card h3 { font-size: 16px; margin-bottom: 5px; }
+        .card .price { color: #ff5722; font-weight: bold; margin-bottom: 10px; }
+        .card button { background: #ff5722; color: #fff; border: none; padding: 8px 15px; border-radius: 3px; cursor: pointer; width: 100%; }
 
-        /* Navigasi Bawah Gaya Aplikasi Mobile */
-        .bottom-nav { position: fixed; bottom: 0; left: 0; right: 0; background: #111; height: 60px; display: flex; justify-content: space-around; align-items: center; border-top: 1px solid #222; z-index: 100; }
-        .nav-item { color: #888; font-size: 20px; text-decoration: none; display: flex; flex-direction: column; align-items: center; justify-content: center; }
-        .nav-item.active { color: #fff; }
-        .nav-item span { font-size: 10px; margin-top: 2px; font-weight: 600; }
+        /* Footer */
+        footer { background: #333; color: #fff; text-align: center; padding: 20px; margin-top: 40px; }
     </style>
 </head>
 <body>
 
-    <!-- Navigasi Atas -->
     <header>
-        <div class="logo">PASHAYA</div>
+        <div class="logo">TokoKita</div>
         <div class="nav-links">
-            <a href="#">Lihat Semua</a>
+            <a href="#">Beranda</a>
+            <a href="#">Kategori</a>
+            <a href="#">Keranjang</a>
         </div>
     </header>
 
-    <!-- Banner Utama dengan Gambar Model Tertanam Langsung -->
     <section class="hero">
-        <div class="hero-text">
-            <p style="color: #c5a880; font-size: 11px; font-weight: 700; margin-bottom: 2px;">WINTER ESSENTIALS</p>
-            <h1>Jaket Hangat Pilihan</h1>
-            <p>Didesain modis dan tahan cuaca dingin.</p>
-            <a href="#" class="btn">Jelajahi Koleksi</a>
-        </div>
-        <div class="hero-image">
-            <!-- Gambar model utama (Base64) -->
-            <img src="data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='110' height='140' viewBox='0 0 110 140'><rect width='100%' height='100%' fill='%2322313f'/><circle cx='55' cy='45' r='20' fill='%23c5a880'/><path d='M25,110 Q55,70 85,110 Z' fill='%23c5a880'/><text x='55' y='130' font-family='Arial' font-size='9' fill='%23fff' text-anchor='middle'>Model Banner</text></svg>" alt="Model">
-        </div>
+        <h1>Diskon Spesial Hari Ini!</h1>
+        <p>Temukan produk terbaik dengan harga paling hemat di sini.</p>
+        <a href="#" class="btn">Belanja Sekarang</a>
     </section>
 
-    <!-- Kategori Menu Horizontal -->
-    <div class="categories">
-        <div class="cat-item active">Terbaru</div>
-        <div class="cat-item">Jaket</div>
-        <div class="cat-item">Mantel</div>
-        <div class="cat-item">Kaos</div>
-    </div>
-
-    <!-- Daftar Produk -->
     <div class="container">
-        <h2 class="section-title">Produk Populer Baru</h2>
+        <h2 class="section-title">Produk Terlaris</h2>
         <div class="grid">
-            
-            <!-- Produk 1: Sepatu Olahraga -->
             <div class="card">
-                <button class="like-btn">♥</button>
-                <!-- Gambar Siluet Model Sepatu -->
-                <img src="data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='200' height='240' viewBox='0 0 200 240'><rect width='100%' height='100%' fill='%232c3e50'/><circle cx='100' cy='80' r='35' fill='%23eaf0f6'/><path d='M50,190 Q100,120 150,190 Z' fill='%23eaf0f6'/><path d='M70,210 L130,210 L120,230 L80,230 Z' fill='%23fff'/><text x='100' y='30' font-family='Arial' font-size='12' font-weight='bold' fill='%23fff' text-anchor='middle'>MODEL SEPATU</text></svg>" alt="Sepatu">
-                <h3>Sepatu Olahraga Premium</h3>
+                <img src="" alt="Produk">
+                <h3>Sepatu Olahraga</h3>
                 <div class="price">Rp 250.000</div>
                 <button>Beli</button>
             </div>
-            
-            <!-- Produk 2: Tas Ransel -->
             <div class="card">
-                <button class="like-btn">♥</button>
-                <!-- Gambar Siluet Model Tas -->
-                <img src="data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='200' height='240' viewBox='0 0 200 240'><rect width='100%' height='100%' fill='%2334495e'/><circle cx='100' cy='80' r='35' fill='%23f1c40f'/><path d='M50,190 Q100,120 150,190 Z' fill='%23f1c40f'/><rect x='80' y='140' width='40' height='50' rx='5' fill='%23fff'/><text x='100' y='30' font-family='Arial' font-size='12' font-weight='bold' fill='%23fff' text-anchor='middle'>MODEL TAS</text></svg>" alt="Tas">
-                <h3>Tas Ransel Pria Modern</h3>
+                <img src="" alt="Produk">
+                <h3>Tas Ransel Pria</h3>
                 <div class="price">Rp 150.000</div>
                 <button>Beli</button>
             </div>
-            
-            <!-- Produk 3: Jam Tangan -->
             <div class="card">
-                <button class="like-btn">♥</button>
-                <!-- Gambar Siluet Model Jam -->
-                <img src="data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='200' height='240' viewBox='0 0 200 240'><rect width='100%' height='100%' fill='%232e4053'/><circle cx='100' cy='80' r='35' fill='%23e74c3c'/><path d='M50,190 Q100,120 150,190 Z' fill='%23e74c3c'/><circle cx='100' cy='160' r='15' fill='%23fff'/><text x='100' y='30' font-family='Arial' font-size='12' font-weight='bold' fill='%23fff' text-anchor='middle'>MODEL JAM TANGAN</text></svg>" alt="Jam">
+                <img src="" alt="Produk">
                 <h3>Jam Tangan Kasual</h3>
                 <div class="price">Rp 300.000</div>
                 <button>Beli</button>
             </div>
-            
-            <!-- Produk 4: Kaos Polos -->
             <div class="card">
-                <button class="like-btn">♥</button>
-                <!-- Gambar Siluet Model Kaos -->
-                <img src="data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='200' height='240' viewBox='0 0 200 240'><rect width='100%' height='100%' fill='%231a252f'/><circle cx='100' cy='80' r='35' fill='%232ecc71'/><path d='M50,190 Q100,120 150,190 Z' fill='%232ecc71'/><path d='M75,150 L125,150 L125,195 L75,195 Z' fill='%23fff'/><text x='100' y='30' font-family='Arial' font-size='12' font-weight='bold' fill='%23fff' text-anchor='middle'>MODEL KAOS</text></svg>" alt="Kaos">
+                <img src="" alt="Produk">
                 <h3>Kaos Polos Katun</h3>
                 <div class="price">Rp 75.000</div>
                 <button>Beli</button>
             </div>
-
         </div>
     </div>
 
-    <!-- Menu Navigasi Bawah Persis Seperti Aplikasi Asli -->
-    <div class="bottom-nav">
-        <a href="#" class="nav-item active">🏠<span>Beranda</span></a>
-        <a href="#" class="nav-item">🔍<span>Cari</span></a>
-        <a href="#" class="nav-item">❤️<span>Disukai</span></a>
-        <a href="#" class="nav-item">👤<span>Akun</span></a>
-    </div>
+    <footer>
+        <p>&copy; 2026 TokoKita. Hak cipta dilindungi.</p>
+    </footer>
 
 </body>
 </html>
