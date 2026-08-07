@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sistem Inventaris - Dania</title>
+<style>
+body{font-family:Arial;background:#f0f2f5;margin:0;padding:20px}
+.header{background:#3b82f6;color:white;padding:15px;text-align:right;margin:-20px -20px 20px -20px}
+.card{background:white;padding:20px;border-radius:12px;margin-bottom:20px}
+.box{display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap}
+.box div{flex:1;padding:20px;border-radius:10px;color:white;text-align:center;font-weight:bold;min-width:120px}
+.hijau{background:#10b981} .kuning{background:#f59e0b} .merah{background:#ef4444}
+input{width:95%;padding:10px;margin:8px 0;border:1px solid #ddd;border-radius:6px}
+button{background:#3b82f6;color:white;border:none;padding:10px 20px;border-radius:6px;cursor:pointer}
+table{width:100%;border-collapse:collapse}
+th,td{border:1px solid #ddd;padding:10px;text-align:center}
+th{background:#3b82f6;color:white}
+</style>
+</head>
+<body>
+
+<div class="header">Selamat Datang, Dania</div>
+
+<h2>Dashboard Ringkas</h2>
+<div class="box">
+<div class="hijau">Total Barang<br><span id="total">0</span></div>
+<div class="kuning">Barang Hari Ini<br><span id="hariini">0</span></div>
+<div class="merah">Barang Bulan Ini<br><span id="bulanini">0</span></div>
+</div>
+
+<div class="card">
+<h2>+ Tambah Data Barang</h2>
+<input type="text" id="nama" placeholder="Nama Barang">
+<input type="text" id="kategori" placeholder="Kategori">
+<input type="number" id="stok" placeholder="Stok">
+<input type="number" id="hargaBeli" placeholder="Harga Beli">
+<input type="number" id="hargaJual" placeholder="Harga Jual">
+<button type="button" onclick="simpan()"> Simpan Barang</button>
+</div>
+
+<div class="card">
+<h2>Daftar Semua Barang</h2>
+<table id="tabel"></table>
+</div>
+
+<script>
+let data = JSON.parse(localStorage.getItem('barang')) || [];
+
+function simpan(){
+  let d={
+    nama:document.getElementById('nama').value,
+    kategori:document.getElementById('kategori').value,
+    stok:document.getElementById('stok').value,
+    hargaBeli:document.getElementById('hargaBeli').value,
+    hargaJual:document.getElementById('hargaJual').value,
+    tanggal:new Date().toLocaleDateString('id-ID')
+  };
+  if(!d.nama||!d.stok||!d.hargaBeli||!d.hargaJual){alert('Isi semua data wajib');return}
+  
+  data.push(d); 
+  localStorage.setItem('barang',JSON.stringify(data));
+  
+  document.getElementById('nama').value='';
+  document.getElementById('kategori').value='';
+  document.getElementById('stok').value='';
+  document.getElementById('hargaBeli').value='';
+  document.getElementById('hargaJual').value='';
+  
+  tampil(); hitung();
+  alert('Data Tersimpan!')
+}
+
+function tampil(){
+  let tabel = document.getElementById('tabel');
+  tabel.innerHTML='<tr><th>No</th><th>Nama</th><th>Kategori</th><th>Stok</th><th>Harga Beli</th><th>Harga Jual</th><th>Tanggal</th></tr>';
+  data.forEach((d,i)=>{
+    tabel.innerHTML+=`<tr>
+      <td>${i+1}</td>
+      <td>${d.nama}</td>
+      <td>${d.kategori||'-'}</td>
+      <td>${d.stok}</td>
+      <td>Rp ${parseInt(d.hargaBeli).toLocaleString('id-ID')}</td>
+      <td>Rp ${parseInt(d.hargaJual).toLocaleString('id-ID')}</td>
+      <td>${d.tanggal}</td>
+    </tr>`
+  })
+}
+
+function hitung(){
+  document.getElementById('total').innerText=data.length;
+  let hari=new Date().toLocaleDateString('id-ID');
+  document.getElementById('hariini').innerText=data.filter(d=>d.tanggal==hari).length;
+  document.getElementById('bulanini').innerText=data.length;
+}
+
+tampil();hitung();
+</script>
+</body>
+</html>
