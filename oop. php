@@ -1,0 +1,106 @@
+<?php
+// 1. Membuat Interface MetodePembayaran
+interface MetodePembayaran {
+    public function prosesBayar(float $jumlah, string $keterangan): bool;
+    public function getNamaMetode(): string;
+}
+
+// Fungsi bantu format uang Indonesia
+function formatUang(float $nilai): string {
+    return 'Rp ' . number_format($nilai, 0, ',', '.');
+}
+
+// 2. Class TransferBank
+class TransferBank implements MetodePembayaran {
+    private string $nomorRekening;
+    private float $biayaAdmin = 0; // 0%
+
+    public function __construct(string $nomorRekening) {
+        $this->nomorRekening = $nomorRekening;
+    }
+
+    public function getNamaMetode(): string {
+        return "Transfer Bank";
+    }
+
+    public function prosesBayar(float $jumlah, string $keterangan): bool {
+        $total = $jumlah + ($jumlah * $this->biayaAdmin);
+        
+        echo "=== " . $this->getNamaMetode() . " ===\n";
+        echo "Nomor Rekening: {$this->nomorRekening}\n";
+        echo "Jumlah Bayar: " . formatUang($jumlah) . "\n";
+        echo "Biaya Admin: " . ($this->biayaAdmin * 100) . "%\n";
+        echo "Total Pembayaran: " . formatUang($total) . "\n";
+        echo "Keterangan: $keterangan\n";
+        echo "Status: ✅ Berhasil\n\n";
+        return true;
+    }
+}
+
+// 3. Class QRIS
+class QRIS implements MetodePembayaran {
+    private float $biayaAdmin = 0.007; // 0.7%
+
+    public function getNamaMetode(): string {
+        return "QRIS";
+    }
+
+    public function prosesBayar(float $jumlah, string $keterangan): bool {
+        $biaya = $jumlah * $this->biayaAdmin;
+        $total = $jumlah + $biaya;
+        
+        echo "=== " . $this->getNamaMetode() . " ===\n";
+        echo "Jumlah Bayar: " . formatUang($jumlah) . "\n";
+        echo "Biaya Admin: 0.7% (" . formatUang($biaya) . ")\n";
+        echo "Total Pembayaran: " . formatUang($total) . "\n";
+        echo "Keterangan: $keterangan\n";
+        echo "Status: ✅ Berhasil\n\n";
+        return true;
+    }
+}
+
+// 4. Class KartuKredit
+class KartuKredit implements MetodePembayaran {
+    private string $nomorKartu;
+    private float $biayaAdmin = 0.025; // 2.5%
+
+    public function __construct(string $nomorKartu) {
+        // Tampilkan hanya 4 digit terakhir
+        $this->nomorKartu = substr($nomorKartu, -4);
+    }
+
+    public function getNamaMetode(): string {
+        return "Kartu Kredit";
+    }
+
+    public function prosesBayar(float $jumlah, string $keterangan): bool {
+        $biaya = $jumlah * $this->biayaAdmin;
+        $total = $jumlah + $biaya;
+        
+        echo "=== " . $this->getNamaMetode() . " ===\n";
+        echo "Nomor Kartu: **** **** **** {$this->nomorKartu}\n";
+        echo "Jumlah Bayar: " . formatUang($jumlah) . "\n";
+        echo "Biaya Admin: 2.5% (" . formatUang($biaya) . ")\n";
+        echo "Total Pembayaran: " . formatUang($total) . "\n";
+        echo "Keterangan: $keterangan\n";
+        echo "Status: ✅ Berhasil\n\n";
+        return true;
+    }
+}
+
+// ========= CONTOH PENGGUNAAN =========
+
+echo "===== SISTEM PEMBAYARAN =====\n\n";
+
+// Transfer Bank
+$bank = new TransferBank("1234567890");
+$bank->prosesBayar(500000, "Pembayaran Buku Paket");
+
+// QRIS
+$qris = new QRIS();
+$qris->prosesBayar(150000, "Pembayaran Makanan");
+
+// Kartu Kredit
+$kartu = new KartuKredit("4111222233334444");
+$kartu->prosesBayar(1000000, "Belanja di Toko");
+?>
